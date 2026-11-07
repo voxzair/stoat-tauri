@@ -1,6 +1,7 @@
 # Stoat (Tauri)
 
-Rust-переписанная оболочка десктоп-клиента Stoat на **Tauri v2**, которая грузит
+Rust-переписанная (Tauri v2) оболочка десктоп-клиента
+[stoatchat/for-desktop](https://github.com/stoatchat/for-desktop) (Electron). Грузит
 тот же удалённый чат (`https://stoat.chat/app` по умолчанию), что и Electron-версия.
 Цель — радикально меньшее потребление системных ресурсов.
 
@@ -74,6 +75,13 @@ cargo build --release
 - Смена кастомного фрейма на лету не поддерживается (Tauri не умеет переключать
   decorations у уже созданного окна).
 - Фильтрация собственных PID в virtual_mic — best-effort (`/proc`-обход дерева процессов).
+
+## Лицензия и благодарности
+
+- Проект — производная от [stoatchat/for-desktop](https://github.com/stoatchat/for-desktop),
+  лицензия **AGPL-3.0** (как у оригинала).
+- Виртуальный микрофон (`src/virtual_mic.rs`) — порт
+  [node-pipewire](https://github.com/kakxem/node-pipewire) (MIT).
 
 ## Оговорки
 
