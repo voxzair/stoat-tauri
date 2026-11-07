@@ -1,0 +1,21 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Main window capability, scoped to the remote Stoat web app.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "allow-get-config",
+    "allow-set-config",
+    "allow-get-autostart",
+    "allow-set-autostart",
+    "allow-get-versions",
+    "allow-minimise",
+    "allow-maximise",
+    "allow-close",
+    "allow-set-badge-count"
+  ],
+  "remote": {
+    "urls": ["https://stoat.chat/*"]
+  }
+}

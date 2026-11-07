@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-minimise"
+description = "Enables the minimise command without any pre-configured scope."
+commands.allow = ["minimise"]
+
+[[permission]]
+identifier = "deny-minimise"
+description = "Denies the minimise command without any pre-configured scope."
+commands.deny = ["minimise"]

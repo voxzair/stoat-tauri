@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-maximise"
+description = "Enables the maximise command without any pre-configured scope."
+commands.allow = ["maximise"]
+
+[[permission]]
+identifier = "deny-maximise"
+description = "Denies the maximise command without any pre-configured scope."
+commands.deny = ["maximise"]
