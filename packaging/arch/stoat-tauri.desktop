@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Stoat
+Comment=Stoat desktop client
+Exec=stoat-tauri
+Icon=stoat-tauri
+Terminal=false
+Categories=Network;Chat;InstantMessaging;
+StartupWMClass=stoat-tauri

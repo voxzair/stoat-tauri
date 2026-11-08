@@ -1,0 +1,24 @@
+# Maintainer: voxzair
+pkgname=stoat-tauri
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Stoat desktop shell (Tauri)"
+arch=('x86_64')
+url="https://github.com/voxzair/stoat-tauri"
+license=('AGPL-3.0-or-later')
+depends=('webkit2gtk-4.1' 'gtk3' 'pipewire' 'libayatana-appindicator')
+makedepends=('cargo')
+source=("$pkgname::git+https://github.com/voxzair/stoat-tauri.git")
+sha256sums=('SKIP')
+
+build() {
+  cd "$pkgname"
+  cargo build --release --locked --manifest-path src-tauri/Cargo.toml
+}
+
+package() {
+  cd "$pkgname"
+  install -Dm755 "src-tauri/target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "src-tauri/icons/icon.png" "$pkgdir/usr/share/pixmaps/$pkgname.png"
+  install -Dm644 "packaging/arch/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+}
