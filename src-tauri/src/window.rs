@@ -62,7 +62,8 @@ pub fn create(app: &AppHandle, config: &Config, init_script: String) -> tauri::R
     .on_permission_request(|_webview, kind| match kind {
         tauri::webview::PermissionKind::Microphone
         | tauri::webview::PermissionKind::Camera
-        | tauri::webview::PermissionKind::DisplayCapture => {
+        | tauri::webview::PermissionKind::DisplayCapture
+        | tauri::webview::PermissionKind::Notifications => {
             tauri::webview::PermissionResponse::Allow
         }
         _ => tauri::webview::PermissionResponse::Default,
