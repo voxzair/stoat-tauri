@@ -89,8 +89,9 @@ pub fn create(app: &AppHandle, config: &Config, init_script: String) -> tauri::R
 
     attach_window_events(&window);
 
-    // Enable WebRTC in WebKitGTK (it is disabled by default there; the app
-    // needs it for LiveKit voice channels).
+    // Enable WebRTC + MediaStream in WebKitGTK (both are disabled by default
+    // there; LiveKit voice needs WebRTC for RTCPeerConnection and MediaStream
+    // for navigator.mediaDevices/getUserMedia).
     #[cfg(target_os = "linux")]
     {
         use webkit2gtk::{SettingsExt, WebViewExt};
@@ -98,6 +99,7 @@ pub fn create(app: &AppHandle, config: &Config, init_script: String) -> tauri::R
             let webview = webview.inner();
             if let Some(settings) = webview.settings() {
                 settings.set_enable_webrtc(true);
+                settings.set_enable_media_stream(true);
             }
         })?;
     }
